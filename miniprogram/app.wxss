@@ -1,0 +1,11 @@
+page{background:#f5f7f4;color:#203b32;font:28rpx/1.8 -apple-system,"PingFang SC",sans-serif}
+view,text,input,button{box-sizing:border-box}button::after{border:0}.page{padding:34rpx 32rpx 70rpx}
+.kicker{font-size:22rpx;letter-spacing:4rpx;color:#7a9b8b}.title{font-size:46rpx;font-weight:600;margin:10rpx 0}.muted{font-size:25rpx;color:#71867b}
+.hero{padding:38rpx;border-radius:25rpx;background:#215d4e;color:white;margin:28rpx 0}.hero .muted{color:#c7ded1}
+.heading{font-size:34rpx;font-weight:600;margin:30rpx 0 20rpx}.card{background:white;border:1rpx solid #e0e8e0;border-radius:20rpx;padding:28rpx;margin:20rpx 0}
+.name{font-size:33rpx;font-weight:600}.tag{display:inline-block;font-size:22rpx;padding:3rpx 12rpx;margin:10rpx 12rpx 10rpx 0;border-radius:8rpx;background:#e7f0e6;color:#34715b}
+.draft{background:#fff0d9;color:#94662a}.notice{padding:20rpx;border-radius:13rpx;background:#fff2db;color:#87602c;font-size:24rpx;margin:18rpx 0}
+.row{display:flex;align-items:center;justify-content:space-between;gap:15rpx}.button{background:#176c5a;color:white;border-radius:13rpx;font-size:27rpx;margin-top:20rpx;line-height:2.8}
+.secondary{background:#e6eee7;color:#245e4c}.search{background:white;border:1rpx solid #d9e2d9;border-radius:12rpx;padding:22rpx;margin:20rpx 0}
+.chip{display:inline-block;padding:8rpx 20rpx;background:#e7ede5;border-radius:24rpx;color:#6a7d70;font-size:24rpx;margin:8rpx 12rpx 8rpx 0}.active{background:#176c5a;color:white}
+.empty{padding:50rpx 20rpx;text-align:center;color:#7d9085}.step{border-left:3rpx solid #9bc4ab;padding:0 0 25rpx 24rpx;margin-left:8rpx}

@@ -1,0 +1,5 @@
+<view class="page" wx:if="{{route}}"><view class="kicker">ROUTE DETAILS</view><view class="title">{{route.name}}</view><view class="notice" wx:if="{{route.status==='draft'}}">草案数据 · 未核验，不构成出行建议。</view>
+<view class="muted">{{route.summary}}</view><view class="card"><view>距离：约 {{route.distanceKm}} km</view><view>步行 {{route.walkingMinutes}} 分钟 ＋ 停留 {{route.stayingMinutes}} 分钟</view><view>总耗时：约 {{route.totalMinutes}} 分钟</view><view class="muted">商圈：{{route.district}}<view>地铁：{{route.metroStation}}</view></view></view>
+<view class="heading">沿途点位</view><view class="step" wx:for="{{route.stops}}" wx:key="order"><view class="name">{{item.order}} · {{item.point.name}}</view><view class="muted">从前一站步行 {{item.walkMinutesFromPrevious}} 分钟 · 停留 {{item.stayMinutes}} 分钟</view><view>{{item.point.description}}</view><view class="muted">{{item.point.notice}}</view><button class="button secondary" bindtap="map">地图导航（待接入）</button></view>
+<view class="notice">{{route.notice}}</view><button class="button" bindtap="favorite">{{saved?'已收藏 · 点击取消':'收藏路线'}}</button></view>
+<view class="page empty" wx:else>路线不存在或已下架。<button class="button" bindtap="routes">返回路线库</button></view>

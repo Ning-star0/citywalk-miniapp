@@ -1,0 +1,74 @@
+[
+  {
+    "code": "A01",
+    "member": "成员1",
+    "title": "[A01][成员1待认领] 架构与数据契约冻结",
+    "body": "## 认领\n成员1待认领。请在评论写“成员1认领 @GitHub用户名”。成员1为负责人 Ning-star0。\n\n## 修改范围\ndocs/architecture.md、docs/xml-contract.md、公共services接口\n\n## 交付物\n评审字段、边界与职责；在Issue记录v1契约结论\n\n## 验收条件\n- [ ] XML字段与JSON输出一致；接口签名明确；其他成员确认依赖\n- [ ] npm run check通过\n- [ ] PR关联本Issue并说明验证方式\n\n## 前置依赖\n无\n\n## 协作说明\n不直接向main提交；从main新建功能分支。跨目录改动请先与成员1协商。"
+  },
+  {
+    "code": "A02",
+    "member": "成员1",
+    "title": "[A02][成员1待认领] GitHub集成、代码审阅与演示",
+    "body": "## 认领\n成员1待认领。请在评论写“成员1认领 @GitHub用户名”。成员1为负责人 Ning-star0。\n\n## 修改范围\n仓库设置、公共模块、最终集成\n\n## 交付物\n审阅模块PR，维护main；完成端到端演示和提交包\n\n## 验收条件\n- [ ] CI通过；演示路线搜索、详情、收藏、地图、打卡；记录未完成项\n- [ ] npm run check通过\n- [ ] PR关联本Issue并说明验证方式\n\n## 前置依赖\nA01及各模块PR\n\n## 协作说明\n不直接向main提交；从main新建功能分支。跨目录改动请先与成员1协商。"
+  },
+  {
+    "code": "D01",
+    "member": "成员2",
+    "title": "[D01][成员2待认领] 贵阳点位调查与证据整理",
+    "body": "## 认领\n成员2待认领。请在评论写“成员2认领 @GitHub用户名”。成员1为负责人 Ning-star0。\n\n## 修改范围\ndata/source/citywalk.xml、调查记录\n\n## 交付物\n整理不少于12个可用于路线的点位，核验地址、开放提示与GCJ-02坐标\n\n## 验收条件\n- [ ] 每个点位有来源、核验日期；坐标实测/地图人工复核；无虚构开放信息\n- [ ] npm run check通过\n- [ ] PR关联本Issue并说明验证方式\n\n## 前置依赖\nA01\n\n## 协作说明\n不直接向main提交；从main新建功能分支。跨目录改动请先与成员1协商。"
+  },
+  {
+    "code": "D02",
+    "member": "成员2",
+    "title": "[D02][成员2待认领] 6～8条贵阳路线数据整理",
+    "body": "## 认领\n成员2待认领。请在评论写“成员2认领 @GitHub用户名”。成员1为负责人 Ning-star0。\n\n## 修改范围\ndata/source/citywalk.xml、路线调查记录\n\n## 交付物\n按商圈/地铁组织6～8条路线，每条2～6点；记录距离、步行、停留耗时\n\n## 验收条件\n- [ ] 实地或可靠路线核验；来源可追溯；距离和耗时标估算；不用占位地铁站\n- [ ] npm run check通过\n- [ ] PR关联本Issue并说明验证方式\n\n## 前置依赖\nD01\n\n## 协作说明\n不直接向main提交；从main新建功能分支。跨目录改动请先与成员1协商。"
+  },
+  {
+    "code": "X01",
+    "member": "成员3",
+    "title": "[X01][成员3待认领] XML/XSD审校与数据版本管理",
+    "body": "## 认领\n成员3待认领。请在评论写“成员3认领 @GitHub用户名”。成员1为负责人 Ning-star0。\n\n## 修改范围\ndata/schema/、data/source/、data/generated/\n\n## 交付物\n审查成员2数据；核对引用、来源、版本异文和GCJ-02坐标；重新生成输出\n\n## 验收条件\n- [ ] npm run data:check通过；verified记录人工审校；生成物和XML一起提交\n- [ ] npm run check通过\n- [ ] PR关联本Issue并说明验证方式\n\n## 前置依赖\nD01、D02\n\n## 协作说明\n不直接向main提交；从main新建功能分支。跨目录改动请先与成员1协商。"
+  },
+  {
+    "code": "X02",
+    "member": "成员3",
+    "title": "[X02][成员3待认领] 构建器和数据负例扩充",
+    "body": "## 认领\n成员3待认领。请在评论写“成员3认领 @GitHub用户名”。成员1为负责人 Ning-star0。\n\n## 修改范围\nscripts/build_catalog.py、tests/test_catalog.py\n\n## 交付物\n补充异常数据测试；验证发布门禁与版本升级方案\n\n## 验收条件\n- [ ] 重复ID、坏引用、坐标越界、负耗时、缺来源、非连续站序均被拒绝；release拒绝草案\n- [ ] npm run check通过\n- [ ] PR关联本Issue并说明验证方式\n\n## 前置依赖\nA01\n\n## 协作说明\n不直接向main提交；从main新建功能分支。跨目录改动请先与成员1协商。"
+  },
+  {
+    "code": "U01",
+    "member": "成员4",
+    "title": "[U01][成员4待认领] 发现页设计与主题入口",
+    "body": "## 认领\n成员4待认领。请在评论写“成员4认领 @GitHub用户名”。成员1为负责人 Ning-star0。\n\n## 修改范围\nminiprogram/pages/home/\n\n## 交付物\n将首页骨架改为正式发现页；提供主题/商圈入口及草案标记\n\n## 验收条件\n- [ ] 适配窄屏；空数据有提示；不在页面自行解析XML；附微信开发者工具截图\n- [ ] npm run check通过\n- [ ] PR关联本Issue并说明验证方式\n\n## 前置依赖\nA01\n\n## 协作说明\n不直接向main提交；从main新建功能分支。跨目录改动请先与成员1协商。"
+  },
+  {
+    "code": "U02",
+    "member": "成员4",
+    "title": "[U02][成员4待认领] 路线列表、组合筛选与空状态",
+    "body": "## 认领\n成员4待认领。请在评论写“成员4认领 @GitHub用户名”。成员1为负责人 Ning-star0。\n\n## 修改范围\nminiprogram/pages/routes/\n\n## 交付物\n完善关键词/商圈/地铁/耗时组合筛选；增加重置和状态说明\n\n## 验收条件\n- [ ] 组合条件同时生效；以总耗时筛选；无结果可恢复；不丢失草案提示\n- [ ] npm run check通过\n- [ ] PR关联本Issue并说明验证方式\n\n## 前置依赖\nA01\n\n## 协作说明\n不直接向main提交；从main新建功能分支。跨目录改动请先与成员1协商。"
+  },
+  {
+    "code": "M01",
+    "member": "成员5",
+    "title": "[M01][成员5待认领] 路线详情与点位顺序展示",
+    "body": "## 认领\n成员5待认领。请在评论写“成员5认领 @GitHub用户名”。成员1为负责人 Ning-star0。\n\n## 修改范围\nminiprogram/pages/detail/\n\n## 交付物\n完善距离、步行/停留耗时拆分、顺序和点位介绍\n\n## 验收条件\n- [ ] 详情与XML一致；非法ID有返回入口；source/notice清晰；附截图\n- [ ] npm run check通过\n- [ ] PR关联本Issue并说明验证方式\n\n## 前置依赖\nA01\n\n## 协作说明\n不直接向main提交；从main新建功能分支。跨目录改动请先与成员1协商。"
+  },
+  {
+    "code": "M02",
+    "member": "成员5",
+    "title": "[M02][成员5待认领] 已核验点位地图导航",
+    "body": "## 认领\n成员5待认领。请在评论写“成员5认领 @GitHub用户名”。成员1为负责人 Ning-star0。\n\n## 修改范围\nminiprogram/pages/detail/、可新增services/navigation.js\n\n## 交付物\n使用wx.openLocation打开verified且有坐标的点位；补齐所需平台声明并真机验证\n\n## 验收条件\n- [ ] 拒绝draft/缺失或非法坐标；GCJ-02人工核验；接口失败有提示；不新增用户定位采集\n- [ ] npm run check通过\n- [ ] PR关联本Issue并说明验证方式\n\n## 前置依赖\nD01、M01\n\n## 协作说明\n不直接向main提交；从main新建功能分支。跨目录改动请先与成员1协商。"
+  },
+  {
+    "code": "P01",
+    "member": "成员6",
+    "title": "[P01][成员6待认领] 收藏完善与本地打卡",
+    "body": "## 认领\n成员6待认领。请在评论写“成员6认领 @GitHub用户名”。成员1为负责人 Ning-star0。\n\n## 修改范围\nminiprogram/pages/mine/、services/favorites.js、独立checkins.js\n\n## 交付物\n实现按路线/点位打卡、取消、时间记录和持久化；保留收藏ID\n\n## 验收条件\n- [ ] 重启恢复；重复打卡规则明确；写入失败不报成功；收藏下架数据不被静默删除\n- [ ] npm run check通过\n- [ ] PR关联本Issue并说明验证方式\n\n## 前置依赖\nA01\n\n## 协作说明\n不直接向main提交；从main新建功能分支。跨目录改动请先与成员1协商。"
+  },
+  {
+    "code": "P02",
+    "member": "成员6",
+    "title": "[P02][成员6待认领] HTTPS数据更新、回退与测试证据",
+    "body": "## 认领\n成员6待认领。请在评论写“成员6认领 @GitHub用户名”。成员1为负责人 Ning-star0。\n\n## 修改范围\n独立services/update.js、pages/mine/、docs/acceptance.md\n\n## 交付物\n实现版本校验、网络/数据错误回退；准备部署说明与整体验收记录\n\n## 验收条件\n- [ ] 坏JSON和不支持版本不覆盖旧数据；请求超时可恢复；需成员1确认域名/路径后部署\n- [ ] npm run check通过\n- [ ] PR关联本Issue并说明验证方式\n\n## 前置依赖\nX02、P01\n\n## 协作说明\n不直接向main提交；从main新建功能分支。跨目录改动请先与成员1协商。"
+  }
+]

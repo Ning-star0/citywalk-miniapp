@@ -1,0 +1,5 @@
+<view class="page"><view class="kicker">GUIYANG CITYWALK</view><view class="title">把周末，交给一条小路。</view><view class="muted">{{city}} · 城市微旅</view>
+<view class="hero"><view class="name">从路线数据开始，发现城市。</view><view class="muted">商圈、地铁站、步行与停留耗时，汇成一份慢行攻略。</view></view>
+<view class="notice">当前为项目骨架，展示待调查草案。点位、距离、耗时和交通条件未核验，请勿据此出行。</view>
+<view class="heading">路线联调样例</view><view class="card" wx:for="{{routes}}" wx:key="id" bindtap="open" data-id="{{item.id}}"><view class="name">{{item.name}}</view><view class="tag draft">{{item.status==='draft'?'待核验草案':'已核验'}}</view><view class="muted">{{item.summary}}</view><view>{{item.distanceKm}} km · 约 {{item.totalMinutes}} 分钟（含停留）</view></view>
+<button class="button" bindtap="routes">进入路线库</button><view class="muted">数据版本 {{version}} · XML 驱动</view></view>

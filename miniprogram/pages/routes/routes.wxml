@@ -1,0 +1,7 @@
+<view class="page"><view class="kicker">ROUTES</view><view class="title">寻找一条适合的路线</view><input class="search" placeholder="搜索路线、点位或主题" value="{{keyword}}" bindinput="search"/>
+<view class="muted">商圈</view><view><text class="chip {{district===item?'active':''}}" wx:for="{{districts}}" wx:key="*this" data-key="district" data-value="{{item}}" bindtap="filter">{{item}}</text></view>
+<view class="muted">地铁站</view><view><text class="chip {{metroStation===item?'active':''}}" wx:for="{{metros}}" wx:key="*this" data-key="metroStation" data-value="{{item}}" bindtap="filter">{{item}}</text></view>
+<view class="muted">总耗时（步行＋停留）</view><view><text class="chip {{maxMinutes==item.value?'active':''}}" wx:for="{{durations}}" wx:key="value" data-key="maxMinutes" data-value="{{item.value}}" bindtap="filter">{{item.label}}</text></view>
+<view class="row"><text>共 {{results.length}} 条</text><text class="muted" bindtap="reset">重置筛选</text></view>
+<view class="card" wx:for="{{results}}" wx:key="id" data-id="{{item.id}}" bindtap="open"><view class="name">{{item.name}}</view><view class="tag draft" wx:if="{{item.status==='draft'}}">待核验</view><view class="muted">{{item.district}} · {{item.metroStation}}</view><view>{{item.distanceKm}} km · 约 {{item.totalMinutes}} 分钟</view></view>
+<view class="empty" wx:if="{{!results.length}}">没有匹配路线，请更换条件。</view></view>

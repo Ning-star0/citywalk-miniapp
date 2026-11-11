@@ -1,0 +1,13 @@
+{
+  "name": "guiyang-citywalk",
+  "version": "0.1.0",
+  "private": true,
+  "description": "贵阳城市微旅：XML 驱动的轻量级微信小程序骨架",
+  "scripts": {
+    "data:build": "python3 scripts/build_catalog.py",
+    "data:check": "python3 scripts/build_catalog.py --check",
+    "data:release": "python3 scripts/build_catalog.py --release --outdir dist",
+    "test": "python3 -m unittest discover -s tests -p 'test_*.py' && node --test tests/*.test.cjs",
+    "check": "npm run data:check && npm test"
+  }
+}

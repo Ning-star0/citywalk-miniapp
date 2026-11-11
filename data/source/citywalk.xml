@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<citywalk xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="../schema/citywalk.xsd"
+          schemaVersion="1" datasetVersion="2026-11-11.1" city="贵阳" updatedAt="2026-11-11">
+  <!-- 仅用于骨架联调。路线、商圈、地铁、距离与耗时均未实地核验，不构成出行攻略。 -->
+  <points>
+    <point id="gyp_001" status="draft">
+      <name>甲秀楼（待核验）</name><category>文化地标</category>
+      <address>待成员2调查补全</address>
+      <description>示例点位；开放情况、位置、步行入口和介绍来源需要核验。</description>
+      <notice>未核验，暂不支持地图导航。</notice>
+    </point>
+    <point id="gyp_002" status="draft">
+      <name>青云路（待核验）</name><category>街区</category>
+      <address>待成员2调查补全</address>
+      <description>示例点位；街区范围、通行条件和适宜停留点需要核验。</description>
+      <notice>未核验，不提供营业时间承诺。</notice>
+    </point>
+    <point id="gyp_003" status="draft">
+      <name>文昌阁（待核验）</name><category>文化地标</category>
+      <address>待成员2调查补全</address>
+      <description>用于演示路线引用同一份点位数据，实际内容由团队调查补充。</description>
+      <notice>未核验，暂不支持地图导航。</notice>
+    </point>
+  </points>
+  <routes>
+    <route id="gyr_001" status="draft">
+      <name>贵阳老城漫步 · 联调草案</name><district>待核验商圈A</district><metroStation>待核验地铁站</metroStation>
+      <summary>演示两点路线与耗时汇总，非已核验攻略。</summary>
+      <distanceKm unit="km" kind="estimate">2.4</distanceKm>
+      <tags><tag>老城</tag><tag>文化</tag></tags>
+      <stops>
+        <stop order="1" pointRef="gyp_001" stayMinutes="20" walkMinutesFromPrevious="0"/>
+        <stop order="2" pointRef="gyp_002" stayMinutes="30" walkMinutesFromPrevious="35"/>
+      </stops>
+      <notice>距离和耗时为联调占位值，发布前必须调查和替换。</notice>
+    </route>
+    <route id="gyr_002" status="draft">
+      <name>贵阳文化街区 · 联调草案</name><district>待核验商圈B</district><metroStation>待核验地铁站</metroStation>
+      <summary>演示按主题、商圈和耗时筛选。</summary>
+      <distanceKm unit="km" kind="estimate">1.8</distanceKm>
+      <tags><tag>街巷</tag><tag>文化</tag></tags>
+      <stops>
+        <stop order="1" pointRef="gyp_003" stayMinutes="25" walkMinutesFromPrevious="0"/>
+        <stop order="2" pointRef="gyp_001" stayMinutes="20" walkMinutesFromPrevious="25"/>
+      </stops>
+      <notice>路线连通性未验证，仅供开发测试。</notice>
+    </route>
+  </routes>
+</citywalk>

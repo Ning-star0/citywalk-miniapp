@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="NonBlank"><xs:restriction base="xs:token"><xs:minLength value="1"/><xs:maxLength value="2000"/></xs:restriction></xs:simpleType>
+  <xs:simpleType name="Status"><xs:restriction base="xs:string"><xs:enumeration value="draft"/><xs:enumeration value="verified"/></xs:restriction></xs:simpleType>
+  <xs:simpleType name="Distance"><xs:restriction base="xs:decimal"><xs:minExclusive value="0"/><xs:maxInclusive value="50"/></xs:restriction></xs:simpleType>
+  <xs:simpleType name="Id"><xs:restriction base="xs:ID"><xs:pattern value="gy[pr]_[0-9]{3,6}"/></xs:restriction></xs:simpleType>
+  <xs:simpleType name="Minutes"><xs:restriction base="xs:nonNegativeInteger"><xs:maxInclusive value="1440"/></xs:restriction></xs:simpleType>
+  <xs:simpleType name="Latitude"><xs:restriction base="xs:decimal"><xs:minInclusive value="-90"/><xs:maxInclusive value="90"/></xs:restriction></xs:simpleType>
+  <xs:simpleType name="Longitude"><xs:restriction base="xs:decimal"><xs:minInclusive value="-180"/><xs:maxInclusive value="180"/></xs:restriction></xs:simpleType>
+  <xs:complexType name="Sources"><xs:sequence><xs:element name="source" minOccurs="1" maxOccurs="10"><xs:complexType><xs:simpleContent><xs:extension base="NonBlank"><xs:attribute name="url" type="xs:anyURI" use="required"/><xs:attribute name="checkedAt" type="xs:date" use="required"/></xs:extension></xs:simpleContent></xs:complexType></xs:element></xs:sequence></xs:complexType>
+  <xs:element name="citywalk">
+    <xs:complexType><xs:sequence>
+      <xs:element name="points"><xs:complexType><xs:sequence>
+        <xs:element name="point" minOccurs="1" maxOccurs="500"><xs:complexType><xs:sequence>
+          <xs:element name="name" type="NonBlank"/><xs:element name="category" type="NonBlank"/>
+          <xs:element name="address" type="NonBlank"/><xs:element name="description" type="NonBlank"/>
+          <xs:element name="coordinates" minOccurs="0"><xs:complexType><xs:sequence>
+            <xs:element name="latitude" type="Latitude"/><xs:element name="longitude" type="Longitude"/>
+          </xs:sequence><xs:attribute name="system" type="xs:string" use="required" fixed="gcj02"/></xs:complexType></xs:element>
+          <xs:element name="notice" type="NonBlank"/><xs:element name="sources" type="Sources" minOccurs="0"/>
+        </xs:sequence><xs:attribute name="id" type="Id" use="required"/><xs:attribute name="status" type="Status" use="required"/></xs:complexType></xs:element>
+      </xs:sequence></xs:complexType></xs:element>
+      <xs:element name="routes"><xs:complexType><xs:sequence>
+        <xs:element name="route" minOccurs="1" maxOccurs="200"><xs:complexType><xs:sequence>
+          <xs:element name="name" type="NonBlank"/><xs:element name="district" type="NonBlank"/>
+          <xs:element name="metroStation" type="NonBlank"/><xs:element name="summary" type="NonBlank"/>
+          <xs:element name="distanceKm"><xs:complexType><xs:simpleContent><xs:extension base="Distance"><xs:attribute name="unit" type="xs:string" fixed="km" use="required"/><xs:attribute name="kind" type="xs:string" fixed="estimate" use="required"/></xs:extension></xs:simpleContent></xs:complexType></xs:element>
+          <xs:element name="tags"><xs:complexType><xs:sequence><xs:element name="tag" type="NonBlank" minOccurs="1" maxOccurs="8"/></xs:sequence></xs:complexType></xs:element>
+          <xs:element name="stops"><xs:complexType><xs:sequence><xs:element name="stop" minOccurs="2" maxOccurs="20"><xs:complexType>
+            <xs:attribute name="order" type="xs:positiveInteger" use="required"/><xs:attribute name="pointRef" type="xs:IDREF" use="required"/>
+            <xs:attribute name="stayMinutes" type="Minutes" use="required"/><xs:attribute name="walkMinutesFromPrevious" type="Minutes" use="required"/>
+          </xs:complexType></xs:element></xs:sequence></xs:complexType></xs:element>
+          <xs:element name="notice" type="NonBlank"/><xs:element name="sources" type="Sources" minOccurs="0"/>
+        </xs:sequence><xs:attribute name="id" type="Id" use="required"/><xs:attribute name="status" type="Status" use="required"/></xs:complexType></xs:element>
+      </xs:sequence></xs:complexType></xs:element>
+    </xs:sequence>
+    <xs:attribute name="schemaVersion" type="xs:positiveInteger" fixed="1" use="required"/>
+    <xs:attribute name="datasetVersion" type="NonBlank" use="required"/><xs:attribute name="city" type="xs:string" fixed="贵阳" use="required"/>
+    <xs:attribute name="updatedAt" type="xs:date" use="required"/>
+    </xs:complexType>
+    <xs:key name="PointIds"><xs:selector xpath="points/point"/><xs:field xpath="@id"/></xs:key>
+    <xs:keyref name="StopPoints" refer="PointIds"><xs:selector xpath="routes/route/stops/stop"/><xs:field xpath="@pointRef"/></xs:keyref>
+  </xs:element>
+</xs:schema>
